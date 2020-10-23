@@ -26,10 +26,10 @@ stream = new Stream({
   const port = process.env.PORT || 3001;
   http.listen(port, () => {
   console.log( `running http at port ${port}`);
-  console.log('Steam Up!')
+  console.log('Stream Up!')
 });
 
 app.get('/', function(req, res) {
-  res.send('Teste');
+  res.send('Stream UP');
 });
 
