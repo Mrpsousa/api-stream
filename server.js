@@ -23,7 +23,7 @@ stream = new Stream({
   }
 })
 
-  const port = 3001;
+  const port = process.env.PORT || 3001;
   http.listen(port, () => {
   console.log( `running http at port ${port}`);
   console.log('Steam Up!')
