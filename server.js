@@ -14,7 +14,7 @@ stream = new Stream({
   kbs: '1024k',
   name: 'simpleCam',
   streamUrl: 'rtsp://admin:Lactec-123@187.95.115.65:512/cam/realmonitor?channel=1&subtype=0',
-  wsPort: 9998,
+  wsPort: 9999,
   ffmpegOptions: { // options ffmpeg flags
     '-stats': '', 
     '-r': 20, 
@@ -23,6 +23,10 @@ stream = new Stream({
   }
 })
 
+// this.stream.prototype.destroy = function() {
+// 	this.pause()
+// };
+
   const port = process.env.PORT || 3001;
   http.listen(port, () => {
   console.log( `running http at port ${port}`);
@@ -30,6 +34,6 @@ stream = new Stream({
 });
 
 app.get('/', function(req, res) {
-  res.send('Stream UP');
+  res.sendFile(__dirname + '/index.html');
 });
 
