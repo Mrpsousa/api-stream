@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 const cors = require('cors');
+let fs = require('fs');
 app.use(cors());
 app.options('*', cors());
 
@@ -25,7 +26,7 @@ stream = new Stream({
 
 // this.stream.prototype.destroy = function() {
 // 	this.pause()
-// };
+// };heroku git:remote -a stream-video-lactec
 
   const port = process.env.PORT || 3001;
   http.listen(port, () => {
@@ -34,8 +35,11 @@ stream = new Stream({
 });
 
 app.get('/', function(req, res) {
-  res.send('Stream UP');
+  // res.send('Stream UP');
+  console.log('Get index');
+  fs.createReadStream('./index.html')
+  .pipe(res);
 });
 
-// res.sendFile(__dirname + '/index.html');
+
 
