@@ -34,6 +34,8 @@ stream = new Stream({
 });
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.send('Stream UP');
 });
+
+// res.sendFile(__dirname + '/index.html');
 
