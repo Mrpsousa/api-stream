@@ -14,7 +14,7 @@ stream = new Stream({
   fps: '30',
   kbs: '1024k',
   name: 'simpleCam',
-  streamUrl: 'rtsp://admin:Lactec-123@187.95.115.65:512/cam/realmonitor?channel=1&subtype=0',
+  streamUrl: 'rtsp://xxxx', //ipcam
   wsPort: 9999,
   ffmpegOptions: { // options ffmpeg flags
     '-stats': '', 
